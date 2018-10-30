@@ -5,15 +5,15 @@
         <a class="page-link" @click="loadPage('prev')"><i class="fas fa-chevron-left"></i></a>
       </li>
       <template v-if="notEnoughPages">
-        <template v-for="n in totalPage">
-          <li class="page-item" :class="isCurrentPage(n) ? 'active' : ''">
+        <template v-for="(n, index) in totalPage" >
+          <li class="page-item" :key="index" :class="isCurrentPage(n) ? 'active' : ''">
             <a class="page-link" @click="loadPage(n)"> {{ n }} </a>
           </li>
         </template>
       </template>
       <template v-else>
-        <template v-for="n in windowSize">
-          <li class="page-item" :class="isCurrentPage(windowStart+n) ? 'active' : ''">
+        <template v-for="(n, index) in windowSize">
+          <li class="page-item" :key="index" :class="isCurrentPage(windowStart+n) ? 'active' : ''">
             <a class="page-link" @click="loadPage(windowStart+n)">
               {{ windowStart+n }}
             </a>

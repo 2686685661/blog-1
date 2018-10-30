@@ -68,5 +68,10 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], funct
 });
 
 // Article
-Route::get('/', 'ArticleController@index');
+Route::get('/', 'IndexController@indexShow');
+
+//my
+Route::get('/article', 'ArticleController@index');
+
+
 Route::get('{slug}', 'ArticleController@show');
