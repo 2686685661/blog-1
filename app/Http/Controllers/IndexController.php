@@ -9,7 +9,13 @@ class IndexController extends Controller {
 
     public function indexShow(Request $request) {
 
-        return view('indexshow.indexshow');
+        $user = User::query()->where('is_admin', 1)->first();
+        
+        if (!isset($user)) {
+            abort(404);
+        }
+
+        return view('indexshow.indexshow', compact('user'));
     }
 
 

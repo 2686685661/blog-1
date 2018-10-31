@@ -35,6 +35,6 @@ function requireAuth(to, from, next) {
   if (window.User) {
     return next()
   } else {
-    return next('/')
+    return next('/article')
   }
 }
