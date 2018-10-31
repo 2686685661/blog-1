@@ -82,6 +82,7 @@
     }
     .avatar{
         width:120px !important;
+        border-radius: 50%;
     }
 </style>
 </head>
